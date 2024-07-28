@@ -1,0 +1,45 @@
+
+CREATE DATABASE IF NOT EXISTS collage;
+
+
+USE collage;
+
+
+DROP TABLE IF EXISTS marks;
+DROP TABLE IF EXISTS student;
+
+
+CREATE TABLE IF NOT EXISTS student (
+    ID INT PRIMARY KEY,
+    name VARCHAR(50),
+    FATHER VARCHAR(50),
+    AGE INT NOT NULL
+);
+
+
+INSERT INTO student (ID, name, FATHER, AGE) VALUES (1, 'ADARSH', 'FatherName1', 22);
+INSERT INTO student (ID, name, FATHER, AGE) VALUES (2, 'moksh', 'FatherName2', 22);
+INSERT INTO student (ID, name, FATHER, AGE) VALUES (3, 'ayush', 'FatherName2', 22);
+
+
+CREATE TABLE IF NOT EXISTS marks (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    student_id INT,
+    subjectname VARCHAR(50),
+    marks INT NOT NULL,
+    FOREIGN KEY (student_id) REFERENCES student(ID)
+);
+
+INSERT INTO marks (student_id, subjectname, marks) VALUES (1, 'math', 80);
+INSERT INTO marks (student_id, subjectname, marks) VALUES (2, 'bio', 90);
+INSERT INTO marks (student_id, subjectname, marks) VALUES (3, 'physics', 85);
+
+
+SELECT * FROM marks;
+
+SELECT * FROM student;
+
+
+SELECT s.ID, s.name, s.FATHER, s.AGE, m.subjectname, m.marks
+FROM student s
+JOIN marks m ON s.ID = m.student_id;
