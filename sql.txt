@@ -13,13 +13,14 @@ CREATE TABLE IF NOT EXISTS student (
     ID INT PRIMARY KEY,
     name VARCHAR(50),
     FATHER VARCHAR(50),
-    AGE INT NOT NULL
+    AGE INT NOT NULL,
+    class INT NOT NULL
 );
 
 
-INSERT INTO student (ID, name, FATHER, AGE) VALUES (1, 'ADARSH', 'FatherName1', 22);
-INSERT INTO student (ID, name, FATHER, AGE) VALUES (2, 'moksh', 'FatherName2', 22);
-INSERT INTO student (ID, name, FATHER, AGE) VALUES (3, 'ayush', 'FatherName2', 22);
+INSERT INTO student (ID, name, FATHER, AGE,class) VALUES (1, 'ADARSH', 'FatherName1', 22,12);
+INSERT INTO student (ID, name, FATHER, AGE,class) VALUES (2, 'moksh', 'FatherName2', 22,12);
+INSERT INTO student (ID, name, FATHER, AGE,class) VALUES (3, 'ayush', 'FatherName2', 22,11);
 
 
 CREATE TABLE IF NOT EXISTS marks (
