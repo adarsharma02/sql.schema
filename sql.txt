@@ -25,14 +25,16 @@ INSERT INTO student (ID, name, FATHER, AGE) VALUES (3, 'ayush', 'FatherName2', 2
 CREATE TABLE IF NOT EXISTS marks (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     student_id INT,
-    subjectname VARCHAR(50),
-    marks INT NOT NULL,
+    
+    physics varchar(50),
+      chemistry varchar(50),
+        math varchar(50),
     FOREIGN KEY (student_id) REFERENCES student(ID)
 );
 
-INSERT INTO marks (student_id, subjectname, marks) VALUES (1, 'math', 80);
-INSERT INTO marks (student_id, subjectname, marks) VALUES (2, 'bio', 90);
-INSERT INTO marks (student_id, subjectname, marks) VALUES (3, 'physics', 85);
+INSERT INTO marks (student_id, physics,chemistry, math ) VALUES (1,  33,55,40);
+INSERT INTO marks (student_id, physics,chemistry, math ) VALUES (2,  90,80,60);
+INSERT INTO marks (student_id, physics,chemistry, math ) VALUES (3,  80,50,90);
 
 
 SELECT * FROM marks;
